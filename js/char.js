@@ -1160,6 +1160,14 @@ function Player(x, y, z) {
         if (this.keyboard.pressed("space")) {
             this.shoot();
         }
+        if (this.keyboard.pressed("Q")) {
+            this.chunk.mesh.rotation.y += (this.speed * delta / 7);
+            this.moving = true;        
+        }
+        if (this.keyboard.pressed("E")) {
+            this.chunk.mesh.rotation.y -= (this.speed * delta / 7);
+            this.moving = true;        
+        }
         if (this.keyboard.pressed("w")) {
             this.chunk.mesh.translateZ(this.speed * delta);
             if(this.cd()) {
